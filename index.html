@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Face generator v.2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="js/lib/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="js/lib/dat.gui.min.js"></script>
+  <script type="text/javascript" src="js/lib/tinycolor.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home" class="darkestColor">
+
+  <div class="background">
+
+		<div class="floor"></div>
+
+    <div class="character">
+			<div class="shadow chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 40" enable-background="new 0 0 400 40" xml:space="preserve">
+				  <path d="M236.4-116.4h-72.8c-20.1 0-36.4 16.3-36.4 36.4v7.3 14.5 21.8h29.1v29.1L149.1 0h36.4v-7.3 -29.1h29.1v29.1V0h36.4l-7.3-7.3v-29.1h29.1v-21.8 -14.5V-80C272.8-100.1 256.5-116.4 236.4-116.4z"/>
+				  <ellipse class="floorShadow" cx="200" cy="20" rx="70" ry="20"/>
+				</svg>
+      </div>
+      <div class="torso chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 120" enable-background="new 0 0 400 120" xml:space="preserve">
+          <path class="darkestColor" d="M236.4 3.6h-72.8c-20.1 0-36.4 16.3-36.4 36.4v7.3 14.5 21.8h29.1v29.1l-7.3 7.3h36.4v-7.3V83.6h29.1v29.1 7.3h36.4l-7.3-7.3V83.6h29.1V61.8 47.2 40C272.8 19.9 256.5 3.6 236.4 3.6z"/>
+        </svg>
+			</div>
+      <div class="head chara-part">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 399 399" enable-background="new 0 0 399 399" xml:space="preserve">
+          <circle class="head-chara-part startColor" fill="#cccccc" cx="200" cy="200" r="200"/>
+        </svg>
+      </div>
+      <div class="face chara-part">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+          <circle class="head-chara-part gentleLight" fill="#E2E2E2" cx="200" cy="200" r="100"/>
+        </svg>
+      </div>
+      <div class="mouth chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+          <path class="head-chara-part strokeDarkest" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M230 270c-15.6 15.6-40.9 15.6-56.6 0"/>
+        </svg>
+			</div>
+      <div class="cheeks chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+				  <circle class="slightlySaturated" opacity="0.5" cx="150" cy="220" r="10"/>
+				  <circle class="slightlySaturated" opacity="0.5" cx="250" cy="220" r="10"/>
+				</svg>
+			</div>
+			<div class="hair chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+				  <path fill="#CCCCCC" d="M400 200c0-1.2 0-2.3 0-3.5v7C400 202.3 400 201.2 400 200z"/>
+				  <path fill="#CCCCCC" d="M0 200c0 1.2 0 2.3 0 3.5v-7C0 197.7 0 198.8 0 200z"/>
+				  <path fill="none" d="M251.3 6.6C250.4 2.9 250-1 250-5c0 3.8-0.4 7.5-1.1 11C249.7 6.2 250.5 6.4 251.3 6.6z"/>
+				  <path class="darkestColor" d="M248.9 6c-15.6-3.9-32-6-48.9-6 -50.7 0-97 18.9-132.3 50H195C221.5 50 243.7 31 248.9 6z"/>
+				  <path class="darkestColor" d="M305 50h27.3c-22.9-20.2-50.5-35.3-81-43.4C256.6 31.4 278.7 50 305 50z"/>
+				</svg>
+			</div>
+      <div class="eyes chara-part">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+          <circle class="head-chara-part veryLight" fill="#FFFFFF" cx="155" cy="145" r="35"/>
+          <path class="darkestColor" d="M155 110c-19.3 0-35 15.7-35 35 0 19.3 15.7 35 35 35s35-15.7 35-35C190 125.7 174.3 110 155 110zM155 173c-15.5 0-28-12.5-28-28 0-15.5 12.5-28 28-28s28 12.5 28 28C183 160.5 170.5 173 155 173z"/>
+          <circle class="head-chara-part veryLight" fill="#FFFFFF" cx="245" cy="145" r="35"/>
+          <path class="darkestColor" d="M245 110c-19.3 0-35 15.7-35 35 0 19.3 15.7 35 35 35s35-15.7 35-35C280 125.7 264.3 110 245 110zM245 173c-15.5 0-28-12.5-28-28 0-15.5 12.5-28 28-28s28 12.5 28 28C273 160.5 260.5 173 245 173z"/>
+          <circle class="head-chara-part darkestColor" cx="155" cy="145" r="15"/>
+          <circle class="head-chara-part darkestColor" cx="245" cy="145" r="15"/>
+        </svg>
+      </div>
+      <div class="nose chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+          <polygon class="lighterLight" fill="#FFFFFF" points="200 270 180 250 190 240 200 180 210 240 220 250 "/>
+        </svg>
+			</div>
+      <div class="brows chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+				  <line class="head-chara-part strokeDarkest" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="square" stroke-miterlimit="10" x1="100" y1="100" x2="300" y2="100"/>
+				</svg>
+			</div>
+    </div>
+  </div>
+
+	<div class="uiBottom">
+		<ul>
+			<li><a href="#" class="stuff1"><span><i class="material-icons">face</i></span></a></li>
+			<li><a href="#"><span class="colorId startColor">---</span></a></li>
+			<li><a href="#" class="stuff2"><span><i class="material-icons">done</i></span></a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

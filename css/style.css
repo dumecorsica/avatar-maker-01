@@ -1,0 +1,155 @@
+@import url("normalize.css") screen, projection;
+
+html, body {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all .4s ease;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+circle { transition: fill .4s ease; }
+path { transition: fill .4s ease; }
+stroke { transition: fill .4s ease; }
+
+.floor {
+  width: 100%;
+  position: absolute;
+  height: 20%;
+  bottom: 0;
+  background: red;
+  transition: all .4s ease;
+  min-height: 300px;
+}
+
+.character {
+  width: 60%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-left: -30%;
+  margin-top: -40%;
+  transition: all .4s ease;
+}
+
+.chara-part {
+  position: absolute;
+  width: 100%;
+}
+.chara-part svg {
+  width: 100%;
+  display: block;
+}
+
+.torso {
+  top: 50%;
+  margin-top: 95%;
+  transition: all .4s ease;
+}
+
+.shadow {
+  top: 50%;
+  margin-top: 120%;
+  opacity: 0.3;
+}
+
+/* text below character */
+.uiBottom {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.uiBottom ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.uiBottom ul li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.uiBottom ul li a{
+  float: left;
+  width: 33.33333333333333333333333333%;
+  position: relative;
+}
+
+.uiBottom ul li a span {
+  display: block;
+  width: 80%;
+  height: 50px;
+  margin-left: 9%;
+  background: #111;
+  border-radius: 50px;
+  padding-top: 30px;
+  transition: all .4s ease;
+  font-weight: bold;
+}
+
+/* animations */
+body.scrollDown .torso {
+  margin-top: 120%;
+}
+
+/* zoom out */
+body.isZoomedOut .character {
+  width: 20%;
+  top: 90%;
+  margin-left: -10%;
+}
+
+body.isZoomedOut .floor {
+  min-height: 150px;
+}
+
+/* media queries */
+
+
+@media all and (min-width: 520px) {
+  /*
+  body {
+    background: yellow;
+  }
+  */
+  .character {
+    background: blue;
+    width: 30%;
+    top: 70%;
+    margin-left: -15%;
+  }
+  .floor {
+    min-height: 500px;
+  }
+  .uiBottom {
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+  }
+  .uiBottom ul li a span {
+    font-size: 12px;
+    padding-top: 33px;
+    height: 47px;
+  }
+  body.isZoomedOut .character {
+    top: 90%;
+  }
+  body.isZoomedOut .floor {
+    min-height:37%;
+  }
+}
