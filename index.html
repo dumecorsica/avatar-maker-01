@@ -9,6 +9,7 @@
   <script type="text/javascript" src="js/lib/tinycolor.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Marvel:400,400italic' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	<!--[if IE]>
@@ -29,6 +30,15 @@
 				  <ellipse class="floorShadow" cx="200" cy="20" rx="70" ry="20"/>
 				</svg>
       </div>
+			<div class="ears chara-part">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 500 400" enable-background="new 0 0 500 400" xml:space="preserve">
+					<circle class="slightlyDark" fill="#CCCCCC" cx="650" cy="600" r="200"/>
+				  <circle class="slightlyDark" fill="#CCCCCC" cx="650" cy="600" r="200"/>
+				  <circle class="slightlyDark" fill="#CCCCCC" cx="250" cy="600" r="200"/>
+				  <circle class="slightlyDark" fill="#CCCCCC" cx="-150" cy="600" r="200"/>
+				  <path class="slightlyDark" fill="#B5B5B5" d="M450 150c-3.4 0-6.8 0.3-10 1v-1H50c-27.6 0-50 22.4-50 50 0 27.6 22.4 50 50 50h390v-1c3.2 0.7 6.6 1 10 1 27.6 0 50-22.4 50-50C500 172.4 477.6 150 450 150z"/>
+				</svg>
+			</div>
       <div class="torso chara-part">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 120" enable-background="new 0 0 400 120" xml:space="preserve">
           <path class="darkestColor" d="M236.4 3.6h-72.8c-20.1 0-36.4 16.3-36.4 36.4v7.3 14.5 21.8h29.1v29.1l-7.3 7.3h36.4v-7.3V83.6h29.1v29.1 7.3h36.4l-7.3-7.3V83.6h29.1V61.8 47.2 40C272.8 19.9 256.5 3.6 236.4 3.6z"/>
@@ -65,6 +75,31 @@
 				</svg>
 			</div>
       <div class="eyes chara-part">
+				<!-- new eyes -->
+				<!--
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 2000" enable-background="new 0 0 400 2000" xml:space="preserve">
+				  <line fill="none" stroke="#000000" stroke-width="8" stroke-miterlimit="10" x1="0" y1="950" x2="400" y2="950"/>
+				  <path fill="#FFFFFF" d="M135 976c-11.6 0-21-9.4-21-21s9.4-21 21-21h30c11.6 0 21 9.4 21 21s-9.4 21-21 21H135z"/>
+				  <path d="M165 938c9.4 0 17 7.6 17 17s-7.6 17-17 17h-30c-9.4 0-17-7.6-17-17s7.6-17 17-17H165M165 930h-30c-13.8 0-25 11.2-25 25l0 0c0 13.8 11.2 25 25 25h30c13.8 0 25-11.2 25-25l0 0C190 941.2 178.8 930 165 930L165 930z"/>
+				  <path fill="#FFFFFF" d="M235 976c-11.6 0-21-9.4-21-21s9.4-21 21-21h30c11.6 0 21 9.4 21 21s-9.4 21-21 21H235z"/>
+				  <path d="M265 938c9.4 0 17 7.6 17 17s-7.6 17-17 17h-30c-9.4 0-17-7.6-17-17s7.6-17 17-17H265M265 930h-30c-13.8 0-25 11.2-25 25l0 0c0 13.8 11.2 25 25 25h30c13.8 0 25-11.2 25-25l0 0C290 941.2 278.8 930 265 930L265 930z"/>
+				  <line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="120" y1="1740" x2="170" y2="1750"/>
+				  <line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="280" y1="1740" x2="230" y2="1750"/>
+				  <path fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M150 1380L150 1380c-11 0-20-9-20-20l0 0c0-11 9-20 20-20h0c11 0 20 9 20 20l0 0C170 1371 161 1380 150 1380z"/>
+				  <circle cx="150" cy="1360" r="10"/>
+				  <path fill="#FFFFFF" stroke="#000000" stroke-width="8" stroke-miterlimit="10" d="M250 1380L250 1380c-11 0-20-9-20-20l0 0c0-11 9-20 20-20h0c11 0 20 9 20 20l0 0C270 1371 261 1380 250 1380z"/>
+				  <circle cx="250" cy="1360" r="10"/>
+				  <circle fill="#FFFFFF" cx="155" cy="145" r="35"/>
+				  <path d="M155 110c-19.3 0-35 15.7-35 35 0 19.3 15.7 35 35 35s35-15.7 35-35C190 125.7 174.3 110 155 110zM155 173c-15.5 0-28-12.5-28-28 0-15.5 12.5-28 28-28s28 12.5 28 28C183 160.5 170.5 173 155 173z"/>
+				  <circle fill="#FFFFFF" cx="245" cy="145" r="35"/>
+				  <path d="M245 110c-19.3 0-35 15.7-35 35 0 19.3 15.7 35 35 35s35-15.7 35-35C280 125.7 264.3 110 245 110zM245 173c-15.5 0-28-12.5-28-28 0-15.5 12.5-28 28-28s28 12.5 28 28C273 160.5 260.5 173 245 173z"/>
+				  <circle cx="155" cy="145" r="15"/>
+				  <circle cx="245" cy="145" r="15"/>
+				  <path fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M176.6 551.7c-15.6-15.6-40.9-15.6-56.6 0"/>
+				  <path fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M280 551.7c-15.6-15.6-40.9-15.6-56.6 0"/>
+				</svg>
+			-->
+				<!-- old eyes -->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
           <circle class="head-chara-part veryLight" fill="#FFFFFF" cx="155" cy="145" r="35"/>
           <path class="darkestColor" d="M155 110c-19.3 0-35 15.7-35 35 0 19.3 15.7 35 35 35s35-15.7 35-35C190 125.7 174.3 110 155 110zM155 173c-15.5 0-28-12.5-28-28 0-15.5 12.5-28 28-28s28 12.5 28 28C183 160.5 170.5 173 155 173z"/>
@@ -84,13 +119,20 @@
 				  <line class="head-chara-part strokeDarkest" fill="none" stroke="#000000" stroke-width="20" stroke-linecap="square" stroke-miterlimit="10" x1="100" y1="100" x2="300" y2="100"/>
 				</svg>
 			</div>
+
+			<div class="speachContainer">
+		    <div class="inner">
+					<p class="textBgColor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper elementum ultricies. Donec viverra, lacus ac condimentum laoreet, ex elit condimentum odio, egestas elementum turpis ligula gravida lectus.</p>
+				</div>
+			</div>
+
     </div>
   </div>
 
 	<div class="uiBottom">
 		<ul>
 			<li><a href="#" class="stuff1"><span><i class="material-icons">face</i></span></a></li>
-			<li><a href="#"><span class="colorId startColor">---</span></a></li>
+			<li class="ui_randomColor"><a href="#"><span class="colorId startColor">---</span></a></li>
 			<li><a href="#" class="stuff2"><span><i class="material-icons">done</i></span></a></li>
 		</ul>
 	</div>

@@ -9,6 +9,7 @@ html, body {
   overflow: hidden;
   position: relative;
   transition: all .4s ease;
+  font-family: 'Marvel', sans-serif;
 }
 a {
   color: #fff;
@@ -48,6 +49,17 @@ stroke { transition: fill .4s ease; }
   display: block;
 }
 
+.ears svg {
+  width: 120%;
+  margin-left: -10%;
+}
+
+.eyes {
+  /*background: yellow;*/
+  height: 300px;
+  overflow: hidden;
+}
+
 .torso {
   top: 50%;
   margin-top: 95%;
@@ -70,6 +82,7 @@ stroke { transition: fill .4s ease; }
   text-align: center;
   text-transform: uppercase;
   overflow: hidden;
+  z-index: 100;
 }
 
 .uiBottom ul {
@@ -102,6 +115,38 @@ stroke { transition: fill .4s ease; }
   font-weight: bold;
 }
 
+/* speach container */
+.speachContainer {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: -100%;
+  margin-left: 0;
+  display: block;
+}
+
+.speachContainer .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all .4s ease;
+}
+
+.speachContainer p {
+  background: black;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  bottom: 10px;
+  position: absolute;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 10px;
+  /* font-style: italic; */
+  transition: all .4s ease;
+  opacity: 0;
+}
+
 /* animations */
 body.scrollDown .torso {
   margin-top: 120%;
@@ -116,6 +161,13 @@ body.isZoomedOut .character {
 
 body.isZoomedOut .floor {
   min-height: 150px;
+}
+
+/* speaks */
+
+/* bofbof... */
+body.isSpeaking .speachContainer p{
+  opacity: 1;
 }
 
 /* media queries */

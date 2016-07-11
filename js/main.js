@@ -25,6 +25,7 @@ var Character = function() {
 Character.prototype.generatePaletteObj = function(hex){
 
   var newColor = tinycolor(hex);
+  var newSlightlyDark = tinycolor(hex).darken();
   var newGentleLight = tinycolor(hex).lighten();
   var newLighterLight = tinycolor(hex).lighten().lighten().lighten();
   var newVeryLight = tinycolor(hex).spin(180).lighten().lighten().lighten().lighten().lighten();
@@ -45,6 +46,7 @@ Character.prototype.generatePaletteObj = function(hex){
   }
 
   this.colorObj.startColor = newColor;
+  this.colorObj.slightlyDark = newSlightlyDark;
   this.colorObj.gentleLight = newGentleLight;
   this.colorObj.lighterLight = newLighterLight;
   this.colorObj.veryLight = newVeryLight;
@@ -63,6 +65,7 @@ Character.prototype.generatePaletteObj = function(hex){
 Character.prototype.applyPaletteObj = function(){
 
   var startColorHex = this.colorObj.startColor.toHex();
+  var slightlyDarkHex = this.colorObj.slightlyDark.toHex();
   var gentleLightHex = this.colorObj.gentleLight.toHex();
   var veryLightHex = this.colorObj.veryLight.toHex();
   var darkestColorHex = this.colorObj.darkestColor.toHex();
@@ -89,10 +92,14 @@ Character.prototype.applyPaletteObj = function(){
   $('.slightlySaturated').attr('fill', '#' + slightlySaturatedHex);
   $('.strokeDarkest').attr('stroke', '#' + darkestColorHex);
   $('.floorShadow').attr('fill', '#' + floorShadowHex);
+  $('.slightlyDark').attr('fill', '#' + slightlyDarkHex);
 
   $('.darkestColor').css('background-color', '#' + newContrastyHex);
   $('.floor').css('background-color', '#' + floorHex);
   $('.colorId').css('background-color', '#' + startColorHex);
+
+  $('.textBgColor').css('background-color', '#' + darkestColorHex);
+  $('.textBgColor').css('color', '#' + veryLightHex);
 
   $('.colorId').html('#' + startColorHex);
 
@@ -130,7 +137,22 @@ Character.prototype.toggleZoom = function() {
     $('body').toggleClass('isZoomedOut');
   }
   //console.log(this.isZoomedOut);
-}
+};
+
+Character.prototype.toggleSpeaking = function() {
+  if(this.isSpeaking) {
+    this.isSpeaking = true;
+    $('body').toggleClass('isSpeaking');
+  } else {
+    this.isSpeaking = false;
+    $('body').toggleClass('isSpeaking');
+  }
+  //console.log(this.isSpeaking);
+};
+
+Character.prototype.saySomething = function(something){
+  console.log('Say: ' + something);
+};
 
 
 var character = new Character();
@@ -180,7 +202,7 @@ var initiGui = function() {
   var isZoomed = gui.add(character, 'isZoomedOut').listen();
   var isSpeaking = gui.add(character, 'isSpeaking').listen();
 
-  gui.add(character, 'name');
+  //gui.add(character, 'name');
 
   colorSeed = gui.addColor(character, 'colorSeed').listen();
 
@@ -196,7 +218,11 @@ var initiGui = function() {
 
   isZoomed.onChange(function(value) {
     character.toggleZoom();
-  });
+  })
+
+  isSpeaking.onChange(function(value) {
+    character.toggleSpeaking();
+  });;
 
   colorSeed.onChange(function(value) {
     character.generatePaletteObj(value);
@@ -205,5 +231,24 @@ var initiGui = function() {
 }
 
 $(function() {
+
   initiGui();
+
+  var divWidth = $('.head').width();
+  console.log(divWidth);
+  $('.eyes').height(divWidth);
+
+  $(window).resize(function(){
+    divWidth = $('.head').width();
+    console.log(divWidth);
+    $('.eyes').height(divWidth);
+  });
+
+  $('.ui_randomColor a').click(function(e) {
+    //console.log('CLICK');
+    var newColor = randomColor();
+    character.generatePaletteObj(newColor.toHex());
+    e.preventDefault();
+  });
+
 });
